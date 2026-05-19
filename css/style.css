@@ -543,12 +543,6 @@ img {
   margin-bottom: var(--space-lg);
 }
 
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
 .contact-email {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -561,16 +555,6 @@ img {
 
 .contact-email:hover {
   color: var(--accent);
-}
-
-.contact-phone {
-  font-size: 1.125rem;
-  color: var(--text-muted);
-  transition: color 0.2s;
-}
-
-.contact-phone:hover {
-  color: var(--text);
 }
 
 /* --- Footer --- */
