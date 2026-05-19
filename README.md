@@ -22,21 +22,18 @@ Edit `index.html` to update:
 
 Tweak colors and fonts in `css/style.css` under the `:root` variables at the top.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers / Pages — new UI)
 
-In the Cloudflare project **Settings → Builds**:
+In **Settings → Builds**, use exactly:
 
 | Setting | Value |
 |--------|--------|
-| Build command | `npm run build` |
-| Build output directory | `dist` |
-| **Deploy command** | **Leave empty** (do not use `npx wrangler deploy`) |
+| **Build command** | `npm run build` |
+| **Deploy command** | `npx wrangler deploy` |
 
-Cloudflare publishes the `dist` folder automatically after a successful build. A custom deploy command is only needed for Workers, not this static site.
+There is no separate “output directory” field in this UI. The built site is published from **`dist`** via `wrangler.jsonc` → `assets.directory`.
 
-If your project already requires a deploy command, use `npx wrangler deploy` — `wrangler.jsonc` in this repo points Wrangler at the built `dist` assets.
-
-Connect the GitHub repo, then add your custom domain under **Custom domains**.
+After a green deploy, add your domain under **Custom domains**.
 
 ## Deploy (other hosts)
 
