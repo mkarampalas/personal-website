@@ -22,22 +22,29 @@ Edit `index.html` to update:
 
 Tweak colors and fonts in `css/style.css` under the `:root` variables at the top.
 
-## Deploy
+## Deploy (Cloudflare Pages)
 
-Build static files:
+In the Cloudflare project **Settings → Builds**:
+
+| Setting | Value |
+|--------|--------|
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| **Deploy command** | **Leave empty** (do not use `npx wrangler deploy`) |
+
+Cloudflare publishes the `dist` folder automatically after a successful build. A custom deploy command is only needed for Workers, not this static site.
+
+If your project already requires a deploy command, use `npx wrangler deploy` — `wrangler.jsonc` in this repo points Wrangler at the built `dist` assets.
+
+Connect the GitHub repo, then add your custom domain under **Custom domains**.
+
+## Deploy (other hosts)
 
 ```bash
 npm run build
 ```
 
-Upload the `dist/` folder to any static host:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Netlify](https://www.netlify.com/)
-- [Vercel](https://vercel.com/)
-- [Cloudflare Pages](https://pages.cloudflare.com/)
-
-For GitHub Pages, set the site source to the `dist` folder or use an action that runs `npm run build` and publishes `dist`.
+Upload the `dist/` folder to Netlify, Vercel, etc.
 
 ## Preview production build
 
