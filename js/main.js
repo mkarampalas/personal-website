@@ -34,7 +34,7 @@ mobileNav.querySelectorAll("a").forEach((link) => {
 
 // Reveal sections on scroll
 const revealTargets = document.querySelectorAll(
-  ".section-label, .section-title, .about-grid, .project-card, .skills-group, .contact-lead, .contact-email"
+  ".section-label, .section-title, .about-grid, .project-card, .contact-lead, .contact-email"
 );
 
 revealTargets.forEach((el) => el.classList.add("reveal"));

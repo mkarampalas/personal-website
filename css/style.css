@@ -279,28 +279,6 @@ img {
   background: var(--accent-dim);
 }
 
-.hero-scroll {
-  position: absolute;
-  bottom: var(--space-lg);
-  left: clamp(1.25rem, 5vw, 3rem);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-  opacity: 0;
-  animation: fade-up 0.8s var(--ease-out) 0.7s forwards;
-}
-
-.scroll-line {
-  width: 1px;
-  height: 3rem;
-  background: linear-gradient(to bottom, var(--accent), transparent);
-  animation: scroll-pulse 2s ease-in-out infinite;
-}
-
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -309,20 +287,6 @@ img {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes scroll-pulse {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scaleY(0.6);
-    transform-origin: top;
-  }
-  50% {
-    opacity: 1;
-    transform: scaleY(1);
-    transform-origin: top;
   }
 }
 
@@ -484,46 +448,6 @@ img {
   .project-tags {
     grid-column: 1;
   }
-}
-
-/* --- Skills --- */
-.skills {
-  padding-top: 0;
-}
-
-.skills-grid {
-  list-style: none;
-  display: grid;
-  gap: var(--space-md);
-}
-
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-  }
-}
-
-.skills-group {
-  padding: var(--space-md);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-}
-
-.skills-group h3 {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: var(--space-xs);
-}
-
-.skills-group p {
-  font-size: 0.9375rem;
-  color: var(--text-muted);
-  line-height: 1.55;
 }
 
 /* --- Contact --- */
